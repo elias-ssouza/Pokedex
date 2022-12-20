@@ -1,7 +1,8 @@
-package com.darkgreen.pokedex
+package com.darkgreen.pokedex.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.darkgreen.pokedex.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
