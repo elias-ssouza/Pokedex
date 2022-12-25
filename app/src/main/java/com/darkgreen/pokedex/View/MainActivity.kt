@@ -18,15 +18,15 @@ class MainActivity : AppCompatActivity() {
 
         val layoutManager = LinearLayoutManager(this)
 
-        val pokemons = listOf(Pokemon(
-            "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/004.png",
+        val pikachu = Pokemon(
+            "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/025.png",
             1,
             "Pikachu",
             listOf(
                 PokemonType("Eletric")
             )
         )
-        )
+        val pokemons = listOf(pikachu, pikachu, pikachu)
 
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = PokemonAdapter(pokemons)
