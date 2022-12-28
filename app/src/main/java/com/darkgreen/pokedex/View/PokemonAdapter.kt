@@ -37,7 +37,7 @@ class PokemonAdapter (
 
             //TODO: Glide
 
-            tvNumber.text = "Nº ${item.number}"
+            tvNumber.text = "Nº ${item.formattedNumber}"
             tvName.text = item.name
             tvPokemonType1.text = item.types[0].name
 
