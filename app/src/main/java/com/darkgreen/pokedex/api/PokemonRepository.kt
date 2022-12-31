@@ -1,4 +1,4 @@
-package com.darkgreen.pokedex.API
+package com.darkgreen.pokedex.api
 
 
 class PokemonRepository  {
