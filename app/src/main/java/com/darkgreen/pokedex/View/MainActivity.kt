@@ -9,6 +9,7 @@ import com.darkgreen.pokedex.Domain.Pokemon
 import com.darkgreen.pokedex.Domain.PokemonType
 import com.darkgreen.pokedex.R
 import com.darkgreen.pokedex.api.PokemonRepository
+import com.darkgreen.pokedex.api.PokemonService
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         )
         val pokemons = listOf(pikachu, pikachu, pikachu)
 
-        val pokemonsApi = PokemonRepository.listPokemon()
+        val pokemonsApi = PokemonRepository.listPokemons()
 
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = PokemonAdapter(pokemons)

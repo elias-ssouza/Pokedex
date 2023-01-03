@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 
-class PokemonRepository  {
+object PokemonRepository  {
 
     private val service: PokemonService
 
@@ -21,11 +21,21 @@ class PokemonRepository  {
         service =  retrofit.create(PokemonService::class.java)
     }
 
-    fun getPokemons(limit: Int = 151){
+    fun listPokemons(limit: Int = 151){
         val call = service.listPokemons(limit)
 
-        call.enqueue(object : Callback<PokemonsApiResult>{
+        call.enqueue(object : Callback<PokemonApiResult> {
+            override fun onResponse(
+                call: Call<PokemonApiResult>,
+                response: Response<PokemonApiResult>
+            ) {
+                Log.d("POKEMON_API", "Pokémons list loaded")
+            }
 
-        }
+            override fun onFailure(call: Call<PokemonApiResult>, t: Throwable) {
+                Log.e("POKEMON_API","Error loading pokemons list")
+            }
+
+            })
     }
 }
