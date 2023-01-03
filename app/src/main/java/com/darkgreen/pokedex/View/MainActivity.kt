@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.darkgreen.pokedex.Domain.Pokemon
 import com.darkgreen.pokedex.Domain.PokemonType
 import com.darkgreen.pokedex.R
+import com.darkgreen.pokedex.api.PokemonRepository
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +28,8 @@ class MainActivity : AppCompatActivity() {
             )
         )
         val pokemons = listOf(pikachu, pikachu, pikachu)
+
+        val pokemonsApi = PokemonRepository.listPokemon()
 
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = PokemonAdapter(pokemons)
