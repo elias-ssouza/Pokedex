@@ -2,14 +2,14 @@ package com.darkgreen.pokedex.api.model
 
 import com.darkgreen.pokedex.Domain.PokemonType
 
-data class PokemonsApiResult (
+data class PokemonsApiResult(
     val count: Int,
     val next: String?,
     val previous: String?,
     val results: List<PokemonResult>
-        )
+)
 
-data class PokemonResult (
+data class PokemonResult(
     val name: String,
     val url: String
 )
@@ -17,7 +17,7 @@ data class PokemonResult (
 data class PokemonApiResult(
     val id: Int,
     val name: String,
-    val types: PokemonTypeSlot
+    val types: List<PokemonTypeSlot>
 )
 
 data class PokemonTypeSlot(

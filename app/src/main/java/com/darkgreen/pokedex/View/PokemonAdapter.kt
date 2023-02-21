@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.darkgreen.pokedex.Domain.Pokemon
 import com.darkgreen.pokedex.R
 
@@ -35,20 +36,21 @@ class PokemonAdapter (
             val tvPokemonType1 = findViewById<TextView>(R.id.tv_pokemon_type1)
             val tvPokemonType2 = findViewById<TextView>(R.id.tv_pokemon_type2)
 
-            //TODO: Glide
+            item?.let {
+                Glide.with(itemView.context).load(it.imageUrl).into(ivPokemon)
 
             tvNumber.text = "Nº ${item.formattedNumber}"
-            tvName.text = item.name
-            tvPokemonType1.text = item.types[0].name
+            tvName.text = item.formattedName
+            tvPokemonType1.text = item.types[0].name.capitalize()
 
             if (item.types.size >1) {
                 tvPokemonType2.visibility = View.VISIBLE
-                tvPokemonType2.text = item.types [1].name
+                tvPokemonType2.text = item.types [1].name.capitalize()
             } else {
                 tvPokemonType2.visibility = View.GONE
             }
 
         }
     }
-
+    }
 }
